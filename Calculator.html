@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/7.24.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/7.24.0/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+
+
+
+    <header>
+        <h1 style="text-align: center; background-color: brown; color: burlywood;">
+            CALCULATOR
+        </h1>
+    </header>
+
+    <div class="center" >
+      <br>
+
+  <div class="center2" >
+  <input type="text" id="nn" name="nn" style="width: 314px; height: 46px; font-size: 20px; "/>
+  </div>
+  <br>
+  <input type="button" id="clear" name="clear" value="C" class="right" onclick="clrnm()" style="width: 60px;height: 50px; margin-left: 246px;">
+  <br>
+  <input type="button" id="one" name="one" value="1" class="left" onclick="one()" style="width: 60px; height: 50px; margin-top: 20px; margin-left: 18px;">
+  <input type="button" id="two" name="two" value="2" class="center1" onclick="two()" style="width: 60px; height: 50px; margin-left: 50px;">
+  <input type="button" id="three" name="three" value="3" class="right" onclick="three()" style="width: 60px;height: 50px; margin-left: 50px;">
+  
+  <br>
+  <input type="button" id="four" name="four" value="4" onclick="four()" style="width: 60px; height: 50px; margin-top: 20px; margin-left: 18px; ">
+  <input type="button" id="five" name="five" value="5" onclick="five()" style="width: 60px; height: 50px; margin-left: 50px;" >
+  <input type="button" id="six" name="six" value="6" onclick="six()" style="width: 60px; height: 50px; margin-left: 50px;">
+  <br>
+  <input type="button" id="seven" name="seven" value="7" onclick="seven()" style="width: 60px; height: 50px; margin-top: 20px;  margin-left: 18px;">
+  <input type="button" id="eight" name="eight" value="8" onclick="eight()" style="width: 60px; height: 50px; margin-left: 50px;">
+  <input type="button" id="nine" name="nine" value="9" onclick="nine()" style="width: 60px; height: 50px; margin-left: 50px;">
+  <br>
+  <input type="button" id="add" name="add" value="+" onclick="add()" style="width: 60px; height: 50px; margin-top: 20px;  margin-left: 18px;">
+  <input type="button" id="zero" name="zero" value="0" onclick="zero()"  style="width: 60px; height: 50px;  margin-left: 50px;">
+  <input type="button" id="sub" name="sub" value="-" onclick="sub()" style="width: 60px; height: 50px;  margin-left: 50px;">
+  <input type="button" id="mult" name="mult" value="*" onclick="mult()" style="width: 60px; height: 50px;  margin-left: 18px; margin-top: 20px;">
+  <input type="button" id="div" name="div" value="/" onclick="div()" style="width: 60px; height: 50px;  margin-left: 50px;">
+  <input type="button" id="result" name="result" value="=" onclick="result()" style="width: 60px; height: 50px; margin-left: 50px;">
+
+</div>
+
+
+<script>
+
+var num1=0;
+var aa=0;
+var sim="";
+var sum=0;
+         
+          function one(){
+              var a=document.getElementById("nn").value;
+              var b=a+"1";
+              document.getElementById("nn").value=b;
+          }
+          function two(){
+              var a=document.getElementById("nn").value;
+              var b=a+"2";
+              document.getElementById("nn").value=b;
+          }
+          function three(){
+              var a=document.getElementById("nn").value;
+              var b=a+"3";
+              document.getElementById("nn").value=b;
+          }
+          function four(){
+              var a=document.getElementById("nn").value;
+              var b=a+"4";
+              document.getElementById("nn").value=b;
+          }
+          function five(){
+              var a=document.getElementById("nn").value;
+              var b=a+"5";
+              document.getElementById("nn").value=b;
+          }
+          function six(){
+              var a=document.getElementById("nn").value;
+              var b=a+"6";
+              document.getElementById("nn").value=b;
+          }
+          function seven(){
+              var a=document.getElementById("nn").value;
+              var b=a+"7";
+              document.getElementById("nn").value=b;
+          }
+          function eight(){
+              var a=document.getElementById("nn").value;
+              var b=a+"8";
+              document.getElementById("nn").value=b;
+          }
+          function nine(){
+              var a=document.getElementById("nn").value;
+              var b=a+"9";
+              document.getElementById("nn").value=b;
+          }
+          function zero(){
+              var a=document.getElementById("nn").value;
+              var b=a+"0";
+              document.getElementById("nn").value=b;
+          }
+
+
+          function add(){
+              var x=document.getElementById("nn").value;
+              aa=parseInt(x);
+              sim="+";
+              num1=parseInt(aa);
+              document.getElementById("nn").value="";
+          }
+          function sub(){
+              var x=document.getElementById("nn").value;
+              aa=parseInt(x);
+              sim="-";
+              num1=parseInt(aa);
+              document.getElementById("nn").value="";
+          }
+          function div(){
+              var x=document.getElementById("nn").value;
+              aa=parseInt(x);
+              sim="/";
+              num1=parseInt(aa);
+              document.getElementById("nn").value="";
+          }
+          function mult(){
+              var x=document.getElementById("nn").value;
+              aa=parseInt(x);
+              sim="*";
+              num1=parseInt(aa);
+              document.getElementById("nn").value="";
+          }
+
+
+          function result(){
+            //   alert(sim);
+              if(sim=="+")
+                {
+                // alert("hai")
+                var a=document.getElementById("nn").value;
+                var b=parseInt(a);
+                // alert(b);
+                
+                sum=aa+b;
+                // alert(sum);
+                document.getElementById("nn").value=sum;
+                }
+              else if(sim=="-") 
+                {
+                var a=document.getElementById("nn").value;
+                var b=parseInt(a);
+                sum=aa-b;
+                // alert(sum);
+                document.getElementById("nn").value=sum;
+                }
+                else if(sim=="*") 
+                {
+                var a=document.getElementById("nn").value;
+                var b=parseInt(a);
+                sum=aa*b;
+                // alert(sum);
+                document.getElementById("nn").value=sum;
+                }
+                
+                else 
+                {
+                var a=document.getElementById("nn").value;
+                var b=parseInt(a);
+                sum=aa/b;
+                document.getElementById("nn").value=sum;
+                }
+                // else 
+                // {
+                // var a=document.getElementById("nn").value;
+                // var b=parseInt(a);
+                // sum=aa*b;
+                // document.getElementById("nn").value=sum;
+                // }
+              
+          }
+          function clrnm(){
+              var a=document.getElementById("nn").value;
+              num1=parseInt(a);
+              document.getElementById("nn").value="";
+          }
+
+</script>
+
+</body>
+</html>
